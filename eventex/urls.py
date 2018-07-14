@@ -13,6 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+
+""" estou comentando estas linhas cconforme aula M2A01
+
 from django.contrib import admin
 from django.urls import path
 import eventex.core.views
@@ -20,4 +24,15 @@ import eventex.core.views
 urlpatterns = [
     path('', eventex.core.views.home),
     path('admin/', admin.site.urls),
+]
+"""
+
+"""adicionaei estas linhas abaixo, conforme aula M2A01"""
+from django.conf.urls import include, url
+from django.contrib import admin
+from eventex.core.views import home
+
+urlpatterns = [
+    url(r'^$', home),
+    url('admin/', admin.site.urls),
 ]

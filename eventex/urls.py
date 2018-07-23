@@ -15,19 +15,23 @@ Including another URLconf
 """
 
 
-""" estou comentando estas linhas cconforme aula M2A01
+""" estou comentando estas linhas cconforme aula M2A01"""
 
 from django.contrib import admin
 from django.urls import path
 import eventex.core.views
+from eventex.subscriptions.views import subscribe
 
 urlpatterns = [
     path('', eventex.core.views.home),
+    path('inscricao/', subscribe),
     path('admin/', admin.site.urls),
 ]
-"""
+
+
 
 """adicionaei estas linhas abaixo, conforme aula M2A01"""
+"""
 from django.conf.urls import include, url
 from django.contrib import admin
 from eventex.core.views import home
@@ -36,3 +40,4 @@ urlpatterns = [
     url(r'^$', home),
     url('admin/', admin.site.urls),
 ]
+"""
